@@ -1,5 +1,7 @@
 # chat-app-frontend
 
+![chat-app](https://i.imgur.com/rHa5eNJ.png)
+
 ## Learning from Tutorial
 
 I learned this Realtime Chat Application through **`JavaScript Mastery`**'s Tutorial:
@@ -28,10 +30,8 @@ I learned this Realtime Chat Application through **`JavaScript Mastery`**'s Tuto
     npm install --save react-router react-router-dom socket.io-client react-scroll-to-bottom react-emoji query-string
     ```
 
-## Run Project
+4. Run it on local (<http://localhost:3000>)
 
-```bash
-npm i && npm start
-```
-
-Local: <http://localhost:3000>
+    ```bash
+    npm i && npm start
+    ```
