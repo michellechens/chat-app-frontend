@@ -9,7 +9,7 @@ import './Chat.css';
 let socket;
 
 const Chat = ({ location }) => {
-    const ENDPOINT = 'localhost:5000';
+    const ENDPOINT = process.env.REACT_APP_BACKEND_ENDPOINT;
 
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
