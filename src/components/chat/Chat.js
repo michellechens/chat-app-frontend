@@ -39,7 +39,8 @@ const Chat = ({ location }) => {
         });
 
         return () => {
-            socket.emit('disconnect');
+            // socket.emit('disconnect');
+            socket.disconnect();
             socket.off();
         };
     }, [ENDPOINT, location.search]);
