@@ -22,7 +22,16 @@ const Chat = ({ location }) => {
         setName(name);
         setRoom(room);
 
-        socket = io(ENDPOINT);
+        socket = io(ENDPOINT, {
+            cors: {
+                origin: '*',
+                methods: ['GET', 'POST'],
+                transports: ['websocket', 'polling'],
+                credentials: true
+            },
+            allowEIO3: true
+        });
+
         socket.emit('join', { name, room }, (error) => {
             if(error) {
                 alert(error);
