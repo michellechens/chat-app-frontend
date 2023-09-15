@@ -1,5 +1,5 @@
 import React from 'react';
-import './Message.css';
+import './Message.scss';
 
 const Message = ({ name, message: { user, text } }) => {
     let isSendByCurrentUser = false;
@@ -12,19 +12,19 @@ const Message = ({ name, message: { user, text } }) => {
     return (
         isSendByCurrentUser
         ? (
-            <div className="messageContainer justifyEnd">
-                <p className="sentText pr-10">{trimmedName}</p>
-                <div className="messageBox backgroundBlue">
-                    <p className="messageText colorWhite">{text}</p>
+            <div className="message-container justify-end">
+                <p className="sent-text pr-10">{trimmedName}</p>
+                <div className="message-box right highlight">
+                    <p className="message-text light">{text}</p>
                 </div>
             </div>
         )
         : (
-            <div className="messageContainer justifyStart">
-                <div className="messageBox backgroundLight">
-                    <p className="messageText colorDark">{text}</p>
+            <div className="message-container justify-start">
+                <div className="message-box left">
+                    <p className="message-text dark">{text}</p>
                 </div>
-                <p className="sentText pl-10">{user}</p>
+                <p className="sent-text pl-10">{user}</p>
             </div>
         )
     );

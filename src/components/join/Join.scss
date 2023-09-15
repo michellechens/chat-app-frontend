@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #FCDDEC;
+    background: #F9ECF2;
 }
 
 .join-inner {
@@ -37,6 +37,10 @@
     border-radius: 8px;
     background: #DCDCDC;
     color: #000000;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .join-button {
@@ -49,8 +53,4 @@
     color: #FFFFFF;
     font-size: 16px;
     cursor: pointer;
-
-    &:focus {
-        outline: 0;
-    }
 }
