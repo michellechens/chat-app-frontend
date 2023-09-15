@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Join.css';
+import './Join.scss';
 
 const Join = () => {
     const [name, setName] = useState('');
@@ -20,14 +20,18 @@ const Join = () => {
         }
     };
 
+    const url = `/chat?name=${name}&room=${room}`;
+
     return (
-        <div className="joinOuterContainer">
-            <div className="joinInnerContainer">
-                <h1 className="heading">Join</h1>
+        <div className="join-outer">
+            <div className="join-inner">
+                <h1>
+                    Welcome To <b>Live Chat</b>
+                </h1>
                 <div>
                     <input
                         type="text"
-                        className="joinInput"
+                        className="join-input"
                         placeholder="Name" 
                         onChange={onChangeName}
                     />
@@ -35,20 +39,20 @@ const Join = () => {
                 <div>
                     <input
                         type="text"
-                        className="joinInput mt-20"
+                        className="join-input"
                         placeholder="Room"
                         onChange={onChangeRoom}
                     />
                 </div>
                 <Link
-                    to={`/chat?name=${name}&room=${room}`}
+                    to={url}
                     onClick={onClickLink}
                 >
                     <button
                         type="submit"
-                        className="button mt-20"
+                        className="join-button"
                     >
-                        Sign In
+                        Join
                     </button>
                 </Link>
             </div>
