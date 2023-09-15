@@ -17,7 +17,7 @@
     padding: 0 1rem;
     display: flex;
     align-items: center;
-    background: #F3F3F3;
+    background: var(--white-two);
 
     &.left {
         border-radius: 32px 32px 32px 0px;
@@ -26,7 +26,7 @@
         border-radius: 32px 32px 0px 32px;
     }
     &.highlight {
-        background: #06C1AB;
+        background: var(--green);
     }
 }
 
@@ -41,10 +41,10 @@
         vertical-align: middle;
     }
     &.light {
-        color: #FFFFFF;
+        color: var(--white);
     }
     &.dark {
-        color: #000000;
+        color: var(--black);
     }
 }
 
@@ -53,7 +53,7 @@
     align-items: center;
     letter-spacing: 0.3px;
     font-family: Helvetica;
-    color: #828282;
+    color: var(--gray-three);
 
     &.pl-10 {
         padding-left: 10px;

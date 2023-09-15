@@ -6,13 +6,13 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 16px 16px 0 0;
-    background: #06C1AB;
+    background: var(--green);
 }
 
 .infoBar-left {
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 .infoBar-right {
