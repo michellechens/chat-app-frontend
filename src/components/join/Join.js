@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import chatboxIcon from '../../icons/chatboxIcon.png';
 import './Join.scss';
 
 const Join = () => {
@@ -27,6 +28,12 @@ const Join = () => {
             <div className="join-inner">
                 <h1>
                     Welcome To <b>Live Chat</b>
+                    <img
+                        src={chatboxIcon}
+                        alt="chatboxImg"
+                        width={60}
+                        height={60}
+                    />
                 </h1>
                 <div>
                     <input

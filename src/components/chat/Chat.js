@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 import InfoBar from '../infoBar/InfoBar';
 import Input from '../input/Input';
 import Messages from '../messages/Messages';
+import chatboxIcon from '../../icons/chatboxIcon.png';
 import './Chat.scss';
 
 let socket;
@@ -62,7 +63,15 @@ const Chat = ({ location }) => {
 
     return (
         <div className="chat-outer">
-            <h1>Live Chat</h1>
+            <h1>
+                Live Chat
+                <img
+                    src={chatboxIcon}
+                    alt="chatboxImg"
+                    width={60}
+                    height={60}
+                />
+            </h1>
             <div className="chat-inner">
                 <InfoBar room={room} />
                 <Messages
