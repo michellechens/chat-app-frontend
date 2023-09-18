@@ -10,7 +10,7 @@
 
 .join-inner {
     width: 50%;
-    min-width: 300px;
+    min-width: 320px;
     max-width: 400px;
     padding: 1rem 1.5rem;
     flex-shrink: 0;
@@ -26,6 +26,32 @@
     }
     b {
         color: var(--green);
+    }
+}
+
+.join-avatar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        padding: 0.5rem;
+        color: var(--black);
+    }
+}
+
+.join-avatar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    img {
+        margin: 0.5rem;
+        opacity: 0.2;
+        cursor: pointer;
+
+        &.active, &:hover {
+            opacity: 1;
+        }
     }
 }
 

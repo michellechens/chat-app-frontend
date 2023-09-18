@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import chatboxIcon from '../../icons/chatboxIcon.png';
+import AVATAR_LIST from '../../avatar';
 import './Join.scss';
 
 const Join = () => {
+    const [avatar, setAvatar] = useState(AVATAR_LIST[0]?.id);
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
 
@@ -21,6 +23,20 @@ const Join = () => {
         }
     };
 
+    const renderAvatar = (item, i) => (
+        <img
+            key={item.id}
+            id={item.id}
+            className={item.id === avatar ? 'active' : undefined}
+            title={item.id}
+            alt={item.id}
+            src={item.img}
+            width={40}
+            height={40}
+            onClick={(e) => setAvatar(e.target.id)}
+        />
+    );
+
     const url = `/chat?name=${name}&room=${room}`;
 
     return (
@@ -35,11 +51,17 @@ const Join = () => {
                         height={60}
                     />
                 </h1>
+                <div className="join-avatar-wrapper">
+                    <span>Avatar</span> 
+                    <div className="join-avatar">
+                        {AVATAR_LIST.map(renderAvatar)}
+                    </div>
+                </div>
                 <div>
                     <input
                         type="text"
                         className="join-input"
-                        placeholder="Name" 
+                        placeholder="Name"
                         onChange={onChangeName}
                     />
                 </div>
