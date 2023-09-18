@@ -19,9 +19,10 @@ const Chat = ({ location }) => {
 
     useEffect(() => { 
         const { avatar, name, room } = queryString.parse(location.search);
-        console.log(avatar, name, room);
         setName(name);
         setRoom(room);
+
+        console.log(avatar, name, room);
 
         socket = io(ENDPOINT, {
             cors: {
@@ -33,8 +34,8 @@ const Chat = ({ location }) => {
             allowEIO3: true
         });
 
-        socket.emit('join', { name, room }, (error) => {
-            if(error) {
+        socket.emit('join', { avatar, name, room }, (error) => {
+            if (error) {
                 alert(error);
             }
         });
@@ -59,7 +60,7 @@ const Chat = ({ location }) => {
         }
     };
 
-    console.log(message, messages);
+    // console.log(message, messages);
 
     return (
         <div className="chat-outer">
@@ -68,8 +69,6 @@ const Chat = ({ location }) => {
                 <img
                     src={chatboxIcon}
                     alt="chatboxImg"
-                    width={60}
-                    height={60}
                 />
             </h1>
             <div className="chat-inner">

@@ -31,8 +31,6 @@ const Join = () => {
             title={item.id}
             alt={item.id}
             src={item.img}
-            width={40}
-            height={40}
             onClick={(e) => setAvatar(e.target.id)}
         />
     );
@@ -47,8 +45,6 @@ const Join = () => {
                     <img
                         src={chatboxIcon}
                         alt="chatboxImg"
-                        width={50}
-                        height={50}
                     />
                 </h1>
                 <div className="join-avatar-wrapper">

@@ -2,6 +2,7 @@
     padding: 0 1rem;
     margin-top: 4px;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
 
     &.justify-start {
@@ -9,6 +10,11 @@
     }
     &.justify-end {
         justify-content: flex-end;
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.5rem;
     }
 }
 
