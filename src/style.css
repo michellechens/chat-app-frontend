@@ -22,4 +22,5 @@ html, body {
     --gray-three: #828282;
     --pink: #FCDDEC;
     --green: #06C1AB;
+    --background: radial-gradient(circle, #036358 0%, #222222 100%);
 }
