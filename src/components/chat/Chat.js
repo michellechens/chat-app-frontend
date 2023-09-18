@@ -18,8 +18,8 @@ const Chat = ({ location }) => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => { 
-        const { name, room } = queryString.parse(location.search);
-        console.log(name, room);
+        const { avatar, name, room } = queryString.parse(location.search);
+        console.log(avatar, name, room);
         setName(name);
         setRoom(room);
 

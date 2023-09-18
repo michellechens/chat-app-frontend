@@ -10,7 +10,7 @@
 
 .join-inner {
     width: 50%;
-    min-width: 320px;
+    min-width: 340px;
     max-width: 400px;
     padding: 1rem 1.5rem;
     flex-shrink: 0;
@@ -26,6 +26,9 @@
     }
     b {
         color: var(--green);
+    }
+    img {
+        margin: 0 0.5rem;
     }
 }
 

@@ -37,7 +37,7 @@ const Join = () => {
         />
     );
 
-    const url = `/chat?name=${name}&room=${room}`;
+    const url = `/chat?avatar=${avatar}&name=${name}&room=${room}`;
 
     return (
         <div className="join-outer">
@@ -47,8 +47,8 @@ const Join = () => {
                     <img
                         src={chatboxIcon}
                         alt="chatboxImg"
-                        width={60}
-                        height={60}
+                        width={50}
+                        height={50}
                     />
                 </h1>
                 <div className="join-avatar-wrapper">
