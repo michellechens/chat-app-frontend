@@ -16,13 +16,14 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => { 
         const { avatar, name, room } = queryString.parse(location.search);
+        console.log(avatar, name, room);
+
         setName(name);
         setRoom(room);
-
-        console.log(avatar, name, room);
 
         socket = io(ENDPOINT, {
             cors: {
@@ -48,6 +49,12 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
+        socket.on('roomData', (roomData) => {
+            setUsers(roomData.users);
+        });
+    }, []);
+
+    useEffect(() => {
         socket.once('message', (message) => {
             setMessages([...messages, message]);
         });
@@ -59,8 +66,6 @@ const Chat = ({ location }) => {
             socket.emit('sendMessage', message, () => setMessage(''));
         }
     };
-
-    // console.log(message, messages);
 
     return (
         <div className="chat-outer">
