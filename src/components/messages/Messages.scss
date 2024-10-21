@@ -1,5 +1,22 @@
 .messages {
-    padding: 2rem 0;
+    padding: 2rem 4px;
     flex: auto;
     overflow: auto;
+
+    div::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent;
+    }
+
+    div::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    div::-webkit-scrollbar-thumb {
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, .2);
+        &:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+    }
 }
