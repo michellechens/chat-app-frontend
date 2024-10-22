@@ -3,19 +3,26 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import Message from './message/Message';
 import './Messages.scss';
 
-const Messages = ({ name, messages }) => (
-    <ScrollToBottom className="messages">
-        {
-            messages.map((message, i) => (
-                <div key={i}>
+const Messages = ({ name, messages }) => {
+    if (!messages?.length) return null;
+
+    const currentDate = new Date().toLocaleDateString();
+    const messageDate = messages[0]?.time?.split(',')[0] || currentDate;
+
+    return (
+        <ScrollToBottom className="messages">
+            <div className="messages-date-box">{messageDate}</div>
+            {
+                messages.map((message, idx) => (
                     <Message
+                        key={idx}
                         name={name}
                         message={message}
                     />
-                </div>
-            ))
-        }
-    </ScrollToBottom>
-);
+                ))
+            }
+        </ScrollToBottom>
+    );
+};
 
 export default Messages;

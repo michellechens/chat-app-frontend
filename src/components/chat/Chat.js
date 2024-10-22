@@ -55,6 +55,7 @@ const Chat = ({ location }) => {
     }, []);
 
     useEffect(() => {
+        console.log('messages:', messages)
         socket.once('message', (message) => {
             setMessages([...messages, message]);
         });
@@ -77,7 +78,10 @@ const Chat = ({ location }) => {
                 />
             </h1>
             <div className="chat-inner">
-                <InfoBar room={room} />
+                <InfoBar
+                    room={room}
+                    users={users}
+                />
                 <Messages
                     name={name}
                     messages={messages}

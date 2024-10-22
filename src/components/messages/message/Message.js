@@ -3,9 +3,10 @@ import robotIcon from '../../../avatar/images/robot.png';
 import AVATAR_LIST from '../../../avatar';
 import './Message.scss';
 
-const Message = ({ name, message: { avatar, user, text } }) => {
+const Message = ({ name, message: { avatar, user, text, time } }) => {
     let isSendByCurrentUser = false;
     const trimmedName = name.trim().toLowerCase();
+    const messageTime = time.split(', ')[1]; 
 
     if (user === trimmedName) {
         isSendByCurrentUser = true;
@@ -25,7 +26,10 @@ const Message = ({ name, message: { avatar, user, text } }) => {
         isSendByCurrentUser
         ? (
             <div className="message-container justify-end">
-                <p className="sent-text pr-10">{trimmedName}</p>
+                <p className="sent-text pr-10">
+                    <span>{trimmedName}</span>
+                    <span>{messageTime}</span>
+                </p>
                 <div className="message-box right highlight">
                     <p className="message-text light">{text}</p>
                 </div>
@@ -38,7 +42,10 @@ const Message = ({ name, message: { avatar, user, text } }) => {
                 <div className="message-box left">
                     <p className="message-text dark">{text}</p>
                 </div>
-                <p className="sent-text pl-10">{user}</p>
+                <p className="sent-text pl-10">
+                    <span>{user}</span>
+                    <span>{messageTime}</span>
+                </p>
             </div>
         )
     );

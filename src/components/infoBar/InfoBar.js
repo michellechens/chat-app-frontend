@@ -3,7 +3,7 @@ import closeIcon from '../../icons/closeIcon.png';
 import onlineIcon from '../../icons/onlineIcon.png';
 import './InfoBar.scss';
 
-const InfoBar = ({ room }) => (
+const InfoBar = ({ room, users }) => (
     <div className="infoBar">
         <div className="infoBar-left">
             <img
@@ -11,7 +11,7 @@ const InfoBar = ({ room }) => (
                 src={onlineIcon}
                 alt="onlineImg"
             />
-            <h3>{room}</h3>
+            <h3>{room} ({users.length})</h3>
         </div>
         <div className="infoBar-right">
             <a href="/">

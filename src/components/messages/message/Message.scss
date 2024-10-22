@@ -1,6 +1,6 @@
 .message-container {
     padding: 0 1rem;
-    margin-top: 4px;
+    margin-top: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -19,6 +19,7 @@
 }
 
 .message-box {
+    height: 40px;
     max-width: 80%;
     padding: 0 1rem;
     display: flex;
@@ -56,15 +57,19 @@
 
 .sent-text {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0;
     letter-spacing: 0.3px;
     font-family: Helvetica;
+    font-size: 10px;
     color: var(--gray-three);
 
     &.pl-10 {
         padding-left: 10px;
+        align-items: flex-start;
     }
     &.pr-10 {
         padding-right: 10px;
+        align-items: flex-end;
     }
 }

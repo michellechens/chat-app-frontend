@@ -1,10 +1,10 @@
 .messages {
-    padding: 2rem 4px;
+    padding: 1rem 4px 2rem 4px;
     flex: auto;
     overflow: auto;
 
     div::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
         background-color: transparent;
     }
 
@@ -19,4 +19,11 @@
             background-color: rgba(0, 0, 0, .3);
         }
     }
+}
+
+.messages-date-box {
+    padding: 0.5rem 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--black);
 }
